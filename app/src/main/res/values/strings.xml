@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Bright Me</string>
+
+    <!-- Bottom Navigation page -->
+    <string name="title_home">Home</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_activity">Activity</string>
+    <string name="title_shop">Shop</string>
+
+    <!-- Onboarding page -->
+    <string name="header_1">Know and promote\nlocal skincare products</string>
+    <string name="subheader_1">Know Indonesian skincare products and develop\ntogether for advanced Indonesia</string>
+    <string name="header_2">Technology-assisted\nskin health detection</string>
+    <string name="subheader_2">Know the condition of your facial skin with just a photo\nand you will be given product recommendations</string>
+    <string name="header_3">Consultation and join\nthe community</string>
+    <string name="subheader_3">Consult your facial skin with the doctor and join\nthe community to promote local products</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="prev">Prev</string>
+    <string name="get_started">Get Started</string>
+
+    <!-- Login page -->
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="google_option">or with Google</string>
+    <string name="not_registered_yet">Not registered yet?</string>
+    <string name="create_an_account">Create an Account</string>
+
+    <!-- Register page -->
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="terms_and_condition">By registering, I agree with the terms and condition</string>
+    <string name="already_have_an_account">Already have an account?</string>
+
+    <!-- Home page -->
+    <string name="hello">Hello,</string>
+    <string name="name">Name</string>
+    <string name="header_home">Lets Grow <b>Together</b>,\nSupport <b>Local</b> Products!</string>
+    <string name="search_hint_home">Find products, doctor, information here</string>
+    <string name="subheader_home_1">Information for you</string>
+    <string name="subheader_home_2">What do you feel now?</string>
+    <string name="subheader_home_3">Popular skincare products</string>
+
+</resources>
