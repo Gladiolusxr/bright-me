@@ -13,7 +13,7 @@ class ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://story-api.dicoding.dev/")
+            .baseUrl("https://skincare-backend-development-bgjd6q5lea-as.a.run.app/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

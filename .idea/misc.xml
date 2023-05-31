@@ -4,9 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_button.xml" value="0.23" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_button_purple.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_button_white.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_camera.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_edit_text.xml" value="0.23" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_information.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_main.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_onboarding.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_result.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_search_view.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/bg_secondary.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/button_sign_in.xml" value="0.231" />
@@ -14,18 +19,27 @@
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/ic_email.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/drawable/ic_person_outline.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_camera.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_on_boarding.xml" value="0.1453804347826087" />
-        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_on_boarding1.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_on_boarding1.xml" value="0.33" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_on_boarding2.xml" value="0.22" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_on_boarding3.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_onboarding_1.xml" value="0.2835408022130014" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_register_verification.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_reset_password.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_reset_password2.xml" value="0.18" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_splash_screen.xml" value="0.1453804347826087" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_survey.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_survey2.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_upload.xml" value="0.13134057971014493" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/activity_verification.xml" value="0.25" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/fragment_activity.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
-        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/layout/fragment_shop.xml" value="0.1" />
         <entry key="..\:/Users/WINDOWS 10/AndroidStudioProjects/BrightMe/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />

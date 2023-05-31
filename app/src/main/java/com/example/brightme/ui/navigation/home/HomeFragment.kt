@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.brightme.databinding.FragmentHomeBinding
 import com.example.brightme.ui.main.MainActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
 
@@ -31,7 +33,7 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         // Access the data passed to the fragment
-        val name = arguments?.getString("name")
+        val name = arguments?.getString("keyName")
 
         // Set the text in the TextView
         binding.tvName.text = name

@@ -1,15 +1,24 @@
 package com.example.brightme.ui.main
 
+import android.Manifest
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.datastore.preferences.protobuf.CodedInputStream.newInstance
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -19,9 +28,17 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.brightme.R
 import com.example.brightme.data.UserPreference
 import com.example.brightme.databinding.ActivityMainBinding
+import com.example.brightme.ui.UploadActivity
 import com.example.brightme.ui.ViewModelFactory
+import com.example.brightme.ui.login.LoginActivity
 import com.example.brightme.ui.navigation.home.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import java.lang.reflect.Array.newInstance
+import java.net.URLClassLoader.newInstance
+import javax.xml.validation.SchemaFactory.newInstance
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -29,9 +46,36 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
+    private lateinit var auth: FirebaseAuth
+    private var signOutStatus: Boolean = false
 
     companion object{
-        const val EXTRA_NAME = "extra_name"
+        const val CAMERA_X_RESULT = 200
+
+        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private const val REQUEST_CODE_PERMISSIONS = 10
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (!allPermissionsGranted()) {
+                Toast.makeText(
+                    this,
+                    "Tidak mendapatkan permission.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                finish()
+            }
+        }
+    }
+
+    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,8 +83,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (!allPermissionsGranted()) {
+            ActivityCompat.requestPermissions(
+                this,
+                REQUIRED_PERMISSIONS,
+                REQUEST_CODE_PERMISSIONS
+            )
+        }
+
         setupView()
         setupViewModel()
+        setupAction()
+        setupSignOut()
     }
 
     private fun setupView() {
@@ -55,24 +109,29 @@ class MainActivity : AppCompatActivity() {
         }
         supportActionBar?.hide()
 
-        val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationView = binding.bottomNavigationView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_home)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_camera, R.id.navigation_profile
+                R.id.navigation_home, R.id.navigation_activity, R.id.navigation_shop, R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        val name = intent.getStringExtra("name")
 
         val homeFragment = HomeFragment()
         val bundle = Bundle()
-        bundle.putString("name", intent.getStringExtra(EXTRA_NAME))
+        bundle.putString("keyName", name)
         homeFragment.arguments = bundle
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_host_fragment_activity_home, homeFragment)
+            .commit()
     }
 
     private fun setupViewModel() {
@@ -81,5 +140,28 @@ class MainActivity : AppCompatActivity() {
             ViewModelFactory(UserPreference.getInstance(dataStore))
         )[MainViewModel::class.java]
 
+    }
+
+    private fun setupAction() {
+        binding.fab.setOnClickListener {
+            startActivity(Intent(this@MainActivity, UploadActivity::class.java))
+        }
+    }
+
+    private fun setupSignOut() {
+        auth = Firebase.auth
+        val firebaseUser = auth.currentUser
+        signOutStatus = intent.getBooleanExtra("signOut", false)
+
+        if (firebaseUser == null && signOutStatus == true) {
+            // Not signed in, launch the Login activity
+            this@MainActivity.getSharedPreferences("data", 0)
+                .edit().clear().apply()
+            mainViewModel.logout()
+
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+            return
+        }
     }
 }

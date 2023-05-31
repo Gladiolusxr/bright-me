@@ -25,9 +25,24 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot password?</string>
-    <string name="google_option">or with Google</string>
+    <string name="google_option">- or with Google -</string>
     <string name="not_registered_yet">Not registered yet?</string>
     <string name="create_an_account">Create an Account</string>
+
+    <!-- Forgot Password page -->
+    <string name="subheader_forgot_password">Don\'t worry. It happened. Please enter the address associated with your account</string>
+    <string name="submit">Submit</string>
+
+    <!-- Reset Password page -->
+    <string name="reset_password">Reset Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="update_password_success">Congratulations, the\npassword update was\nsuccessful!</string>
+    <string name="update">Update</string>
+
+    <!-- OTP Verification page -->
+    <string name="header_verification">OTP Verification</string>
+    <string name="subheader_verification">We will send you a one-time OTP code\non this your email</string>
 
     <!-- Register page -->
     <string name="register">Register</string>
@@ -43,5 +58,37 @@
     <string name="subheader_home_1">Information for you</string>
     <string name="subheader_home_2">What do you feel now?</string>
     <string name="subheader_home_3">Popular skincare products</string>
+    <string name="view_more">View More</string>
 
+    <!-- Profile page -->
+    <string name="header_profile">Profile</string>
+    <string name="subheader_account">Account</string>
+    <string name="subheader_security">Security</string>
+    <string name="subheader_others">Others</string>
+    <string name="edit_profile">Edit Profil</string>
+    <string name="bank_information">Bank Information</string>
+    <string name="change_password">Change Password</string>
+    <string name="settings">Settings</string>
+    <string name="tentang_kami">Tentang Kami</string>
+    <string name="help_center">Help Center</string>
+
+    <!--Camera page-->
+    <string name="result">Process Result</string>
+    <string name="info">The result is base on probability results. The highest probability, it’s more likely to become the result. For the best result, please refers to the guideline for taking the picture or consultation with a doctor who is already available on this application</string>
+    <string name="daily_tips"> "1. Wash problem areas with a gentle cleanser. "\n"2. Try over-the-counter acne products to dry excess oil and promote peeling."\n"3. Avoid irritants."\n"4. Protect your skin from the sun."\n"5. Avoid friction or pressure on your skin."\n"6. Avoid touching or picking acne-prone areas."\n"7. Shower after strenuous activities." </string>
+
+    <!--Survey page (1)-->
+    <string name="header_survey">Survey</string>
+    <string name="age">Age</string>
+    <string name="age_hint">Enter your age</string>
+
+    <!--Survey page (2)-->
+    <string name="type_of_skin">Type of Skin</string>
+    <string name="type_of_skin_subheader">You can choose 1 type of skin</string>
+    <string name="normal_type_skin">Normal Skin</string>
+    <string name="oily_type_skin">Oily Skin</string>
+    <string name="dry_type_skin">Dry Skin</string>
+    <string name="acne_type_skin">Acne Skin</string>
+    <string name="sensitive_type_skin">Sensitive Skin</string>
+    <string name="combination_skin">Combination Skin</string>
 </resources>

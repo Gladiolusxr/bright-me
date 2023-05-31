@@ -20,7 +20,7 @@ class RegisterViewModel : ViewModel() {
     }
 
     fun register(name: String, email: String, password: String) {
-        var client: Call<RegisterResponse> = ApiConfig().getApiService().register(name, email, password)
+        var client: Call<RegisterResponse> = ApiConfig().getApiService().register(email, password, name)
         client.enqueue(object : Callback<RegisterResponse> {
             override fun onResponse(
                 call: Call<RegisterResponse>,
@@ -29,7 +29,7 @@ class RegisterViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     _userRegister.postValue(response.body())
                 } else {
-                    Log.e(TAG, "onFailure:${response.message()}")
+                    Log.e(TAG, "onFailure :${response.message()}")
                 }
             }
 

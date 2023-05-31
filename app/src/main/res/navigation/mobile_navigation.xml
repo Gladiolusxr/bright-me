@@ -19,12 +19,6 @@
 
 
     <fragment
-        android:id="@+id/navigation_camera"
-        android:name="com.example.brightme.ui.navigation.camera.CameraFragment"
-        android:label="@string/title_camera"
-        tools:layout="@layout/fragment_camera" />
-
-    <fragment
         android:id="@+id/navigation_shop"
         android:name="com.example.brightme.ui.navigation.shop.ShopFragment"
         android:label="@string/title_shop"
