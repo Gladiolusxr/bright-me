@@ -90,5 +90,5 @@
     <string name="dry_type_skin">Dry Skin</string>
     <string name="acne_type_skin">Acne Skin</string>
     <string name="sensitive_type_skin">Sensitive Skin</string>
-    <string name="combination_skin">Combination Skin</string>
+    <string name="combination_type_skin">Combination Skin</string>
 </resources>

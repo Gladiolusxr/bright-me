@@ -72,8 +72,11 @@ class RegisterActivity : AppCompatActivity() {
                 else -> {
                     registerViewModel.register(name, email, password)
                     registerViewModel.userRegister.observe(this) {
+                        registerViewModel.saveUserToken(it.data.token)
                         if (it != null) {
-                            val intent = Intent(this, LoginActivity::class.java)
+                            val intent = Intent(this, RegisterVerificationActivity::class.java).also { send ->
+                                send.putExtra("email", email)
+                            }
                             startActivity(intent)
                         }
                     }

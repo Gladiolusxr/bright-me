@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class RegisterResponse(
 
+	@field:SerializedName("data")
+	val data: Data,
+
 	@field:SerializedName("code")
 	val code: Int,
 

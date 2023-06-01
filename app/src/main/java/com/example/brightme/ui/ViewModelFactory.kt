@@ -9,6 +9,7 @@ import com.example.brightme.ui.login.ResetPasswordViewModel
 import com.example.brightme.ui.main.MainViewModel
 import com.example.brightme.ui.register.RegisterViewModel
 import com.example.brightme.ui.login.VerificationViewModel
+import com.example.brightme.ui.register.RegisterVerificationViewModel
 
 class ViewModelFactory (private val pref: UserPreference) : ViewModelProvider.NewInstanceFactory() {
 
@@ -19,7 +20,10 @@ class ViewModelFactory (private val pref: UserPreference) : ViewModelProvider.Ne
                 MainViewModel(pref) as T
             }
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
-                RegisterViewModel() as T
+                RegisterViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(RegisterVerificationViewModel::class.java) -> {
+                RegisterVerificationViewModel(pref) as T
             }
             modelClass.isAssignableFrom(VerificationViewModel::class.java) -> {
                 VerificationViewModel(pref) as T

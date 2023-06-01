@@ -33,6 +33,13 @@ interface ApiService {
     ): Call<RegisterResponse>
 
     @FormUrlEncoded
+    @POST("/auth/verify")
+    fun regisVerify(
+        @Field("token") token: String,
+        @Field("otp") otp: String,
+    ): Call<RegisterVerificationResponse>
+
+    @FormUrlEncoded
     @POST("/auth/login")
     fun login(
         @Field("email") email: String,
@@ -47,7 +54,7 @@ interface ApiService {
 
     @FormUrlEncoded
     @POST("/auth/forgotVerify")
-    fun verify(
+    fun forgotVerify(
         @Field("token") token: String,
         @Field("otp") otp: String,
     ): Call<VerificationResponse>

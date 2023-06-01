@@ -35,13 +35,10 @@
         android:theme="@style/Theme.BrightMe"
         tools:targetApi="31">
         <activity
-            android:name=".RegisterVerificationActivity"
+            android:name=".ui.survey.SurveyActivity2"
             android:exported="false" />
         <activity
-            android:name=".SurveyActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".SurveyActivity"
+            android:name=".ui.survey.SurveyActivity"
             android:exported="false" />
         <activity
             android:name=".ui.login.VerificationActivity"
@@ -60,6 +57,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.register.RegisterVerificationActivity"
             android:exported="false" />
         <activity
             android:name=".ui.on_boarding.OnBoarding3Activity"

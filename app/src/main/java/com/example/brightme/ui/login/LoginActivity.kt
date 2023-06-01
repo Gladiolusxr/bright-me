@@ -21,6 +21,7 @@ import com.example.brightme.databinding.ActivityLoginBinding
 import com.example.brightme.ui.ViewModelFactory
 import com.example.brightme.ui.main.MainActivity
 import com.example.brightme.ui.register.RegisterActivity
+import com.example.brightme.ui.survey.SurveyActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -111,7 +112,7 @@ class LoginActivity : AppCompatActivity() {
                     loginViewModel.userLogin.observe(this){ data ->
                         loginViewModel.saveUserToken(data.token)
                         Log.d(TAG, "data.token:" + data.token)
-                        val intent = Intent(this, MainActivity::class.java).also {
+                        val intent = Intent(this, SurveyActivity::class.java).also {
                             it.putExtra("name", data.name)
                         }
                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK

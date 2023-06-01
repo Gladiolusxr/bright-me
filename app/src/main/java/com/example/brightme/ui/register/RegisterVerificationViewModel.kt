@@ -1,4 +1,4 @@
-package com.example.brightme.ui.login
+package com.example.brightme.ui.register
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,26 +6,26 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.example.brightme.data.UserPreference
-import com.example.brightme.data.response.VerificationResponse
+import com.example.brightme.data.response.RegisterVerificationResponse
 import com.example.brightme.data.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class VerificationViewModel(private val pref: UserPreference): ViewModel() {
-    private val _userVerify = MutableLiveData<VerificationResponse>()
-    val userVerify: LiveData<VerificationResponse> = _userVerify
+class RegisterVerificationViewModel(private val pref: UserPreference): ViewModel() {
+    private val _userVerify = MutableLiveData<RegisterVerificationResponse>()
+    val userVerify: LiveData<RegisterVerificationResponse> = _userVerify
 
     companion object {
-        private const val TAG = "VerificationViewModel"
+        private const val TAG = "RegisterVerifViewModel"
     }
 
     fun verification(token: String, otp: String) {
-        var client: Call<VerificationResponse> = ApiConfig().getApiService().forgotVerify(token, otp)
-        client.enqueue(object : Callback<VerificationResponse> {
+        var client: Call<RegisterVerificationResponse> = ApiConfig().getApiService().regisVerify(token, otp)
+        client.enqueue(object : Callback<RegisterVerificationResponse> {
             override fun onResponse(
-                call: Call<VerificationResponse>,
-                response: Response<VerificationResponse>,
+                call: Call<RegisterVerificationResponse>,
+                response: Response<RegisterVerificationResponse>,
             ) {
                 if (response.isSuccessful) {
                     _userVerify.postValue(response.body())
@@ -34,7 +34,7 @@ class VerificationViewModel(private val pref: UserPreference): ViewModel() {
                 }
             }
 
-            override fun onFailure(call: Call<VerificationResponse>, t: Throwable) {
+            override fun onFailure(call: Call<RegisterVerificationResponse>, t: Throwable) {
                 Log.e(TAG, "onFailure: ${t.message}")
             }
         })
