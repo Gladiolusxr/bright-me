@@ -4,13 +4,16 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.brightme.data.UserPreference
 import com.example.brightme.data.response.RegisterResponse
 import com.example.brightme.data.retrofit.ApiConfig
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RegisterViewModel : ViewModel() {
+class RegisterViewModel(private val pref: UserPreference) : ViewModel() {
 
     private val _userRegister = MutableLiveData<RegisterResponse>()
     val userRegister: LiveData<RegisterResponse> = _userRegister
@@ -37,5 +40,17 @@ class RegisterViewModel : ViewModel() {
                 Log.e(TAG, "onFailure: ${t.message}")
             }
         })
+    }
+
+    fun saveUserToken(token: String) {
+        viewModelScope.launch {
+            pref.setToken(token)
+        }
+    }
+
+    fun deleteToken() {
+        viewModelScope.launch {
+            pref.deleteToken()
+        }
     }
 }

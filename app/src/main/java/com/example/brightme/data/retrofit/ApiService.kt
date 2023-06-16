@@ -67,4 +67,9 @@ interface ApiService {
     @GET("/product")
     fun getProduct(
     ): Call<ProductResponse>
+
+    @GET("/profile")
+    fun getProfile(
+        @Header("Authorization") token: String,
+    ): Call<ProfileResponse>
 }

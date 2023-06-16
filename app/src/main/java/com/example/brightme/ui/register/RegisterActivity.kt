@@ -73,6 +73,8 @@ class RegisterActivity : AppCompatActivity() {
                     registerViewModel.register(name, email, password)
                     registerViewModel.userRegister.observe(this) {
                         if (it != null) {
+                            registerViewModel.deleteToken()
+                            registerViewModel.saveUserToken(it.data.token)
                             val intent = Intent(this, RegisterVerificationActivity::class.java)
                             startActivity(intent)
                         }

@@ -20,7 +20,7 @@ class ViewModelFactory (private val pref: UserPreference) : ViewModelProvider.Ne
                 MainViewModel(pref) as T
             }
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
-                RegisterViewModel() as T
+                RegisterViewModel(pref) as T
             }
             modelClass.isAssignableFrom(RegisterVerificationViewModel::class.java) -> {
                 RegisterVerificationViewModel(pref) as T

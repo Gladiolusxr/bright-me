@@ -17,4 +17,8 @@ class MainViewModel(private val pref: UserPreference) : ViewModel() {
             pref.deleteToken()
         }
     }
+
+    fun getToken(): LiveData<String> {
+        return pref.getToken().asLiveData()
+    }
 }

@@ -29,6 +29,7 @@ import com.example.brightme.ui.UploadActivity
 import com.example.brightme.ui.ViewModelFactory
 import com.example.brightme.ui.login.LoginActivity
 import com.example.brightme.ui.navigation.home.HomeFragment
+import com.example.brightme.ui.navigation.profile.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainViewModel: MainViewModel
     private lateinit var auth: FirebaseAuth
     private var signOutStatus: Boolean = false
+    private var token: String = ""
 
     companion object{
         const val CAMERA_X_RESULT = 200
@@ -85,10 +87,25 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        setupView()
         setupViewModel()
+        setupView()
         setupAction()
         setupSignOut()
+    }
+
+    private fun setupViewModel() {
+        mainViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[MainViewModel::class.java]
+
+        mainViewModel.getToken().observe(this){
+            if(it != null && it.toString() != "NotFound"){
+                token = it.toString()
+                Log.e("it getToken()", "hasil token = $token")
+            }
+        }
+
     }
 
     private fun setupView() {
@@ -122,18 +139,13 @@ class MainActivity : AppCompatActivity() {
 
         val homeFragment = HomeFragment()
         homeFragment.arguments = bundleOf("name" to name)
+        if (token != ""){
+            homeFragment.arguments = bundleOf("token" to token)
+        }
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.nav_host_fragment_activity_home, homeFragment)
             .commit()
-    }
-
-    private fun setupViewModel() {
-        mainViewModel = ViewModelProvider(
-            this,
-            ViewModelFactory(UserPreference.getInstance(dataStore))
-        )[MainViewModel::class.java]
-
     }
 
     private fun setupAction() {

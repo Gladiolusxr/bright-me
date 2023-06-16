@@ -46,4 +46,10 @@ class ForgotPasswordViewModel(private val pref: UserPreference): ViewModel() {
             pref.setToken(token)
         }
     }
+
+    fun deleteToken() {
+        viewModelScope.launch {
+            pref.deleteToken()
+        }
+    }
 }

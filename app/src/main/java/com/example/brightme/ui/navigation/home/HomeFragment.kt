@@ -12,12 +12,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.brightme.databinding.FragmentHomeBinding
+import com.example.brightme.ui.DataListener
 import com.example.brightme.ui.main.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+    private var dataListener: DataListener? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -35,6 +37,11 @@ class HomeFragment : Fragment() {
 
         // Access the data passed to the fragment
         val name = arguments?.getString("name")
+        val token = arguments?.getString("token")
+
+        if (token != null) {
+            dataListener?.onDataReceived(token)
+        }
 
         // Set the text in the TextView
         if (name != null){
@@ -74,6 +81,10 @@ class HomeFragment : Fragment() {
         })
 
         return root
+    }
+
+    fun setDataListener(listener: DataListener) {
+        dataListener = listener
     }
 
     override fun onDestroyView() {

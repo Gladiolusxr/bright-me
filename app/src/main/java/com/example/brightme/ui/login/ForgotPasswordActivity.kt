@@ -69,6 +69,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
                     forgotPasswordViewModel.forgotPassword(email)
                     forgotPasswordViewModel.userForgot.observe(this){ it ->
                         if (it != null) {
+                            forgotPasswordViewModel.deleteToken()
                             forgotPasswordViewModel.saveUserToken(it.data.token)
                             val intent = Intent(this, VerificationActivity::class.java).also { send ->
                                 send.putExtra("email", email)

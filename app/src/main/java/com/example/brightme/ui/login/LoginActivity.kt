@@ -109,6 +109,7 @@ class LoginActivity : AppCompatActivity() {
                 else -> {
                     loginViewModel.login(email, password)
                     loginViewModel.userLogin.observe(this){ data ->
+                        loginViewModel.deleteToken()
                         loginViewModel.saveUserToken(data.token)
                         Log.d(TAG, "data.token:" + data.token)
                         val intent = Intent(this, SurveyActivity::class.java).also {
