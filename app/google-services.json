@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "62987576227",
+    "project_id": "bright-me-fd817",
+    "storage_bucket": "bright-me-fd817.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62987576227:android:9871592783561be2f87016",
+        "android_client_info": {
+          "package_name": "com.example.brightme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62987576227-tf16rq1r4uaporgc3bohq2jg5qlrc1e5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.brightme",
+            "certificate_hash": "5e93ed34671d6f7b06ced4da5a1f41225411b776"
+          }
+        },
+        {
+          "client_id": "62987576227-b0k4ln4pc7sl8hl0ror3sr1391t4il7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaUP_cVgwbh-IE-96_hu9UwW6AEHHU8LE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62987576227-b0k4ln4pc7sl8hl0ror3sr1391t4il7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/>
+    <!--  Warna latar belakang utama  -->
+    <corners android:radius="24dp"/>
+    <!--  Radius sudut sesuai kebutuhan  -->
+    <padding android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp"/>
+    <!--  Margin dalam untuk membuat ruang bagi efek bayangan  -->
+</shape>

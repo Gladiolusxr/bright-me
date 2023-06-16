@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_main"
+    tools:context=".ui.navigation.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/header_profile"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/iv_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_bg"
+        android:layout_width="400dp"
+        android:layout_height="601dp"
+        android:background="@drawable/bg_secondary"
+        android:paddingHorizontal="25dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view_profile"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name"
+            app:layout_constraintHorizontal_bias="0.538"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="aurelia@gmail.com" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:textColor="@color/gray_text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/view_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Aurelia Sukianto" />
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Account"
+            android:textColor="@color/gray_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+        <TextView
+            android:id="@+id/tv_security"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Security"
+            android:textColor="@color/gray_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_account" />
+
+        <TextView
+            android:id="@+id/tv_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Others"
+            android:textColor="@color/gray_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_security" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_security"
+            android:layout_width="313dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.603"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_security">
+
+            <ImageView
+                android:id="@+id/iv_password"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_change"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_password"
+                app:layout_constraintEnd_toStartOf="@+id/tv_password"
+                app:layout_constraintHorizontal_bias="0.432"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_password"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="174dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Change Password"
+                android:textColor="#4A4A4A"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.41"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_right_3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.596"
+                app:layout_constraintStart_toEndOf="@+id/tv_password"
+                app:layout_constraintTop_toTopOf="@+id/tv_password"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_account"
+            android:layout_width="313dp"
+            android:layout_height="102dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.647"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_account">
+
+
+            <TextView
+                android:id="@+id/tv_edit_profile"
+                android:layout_width="113dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="152dp"
+                android:text="Edit Profile"
+                android:textColor="#4A4A4A"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/line_1"
+                android:layout_width="280dp"
+                android:layout_height="1dp"
+                android:background="#bfbfbf"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/tv_bank"
+                app:layout_constraintEnd_toEndOf="@+id/iv_right_1"
+                app:layout_constraintStart_toStartOf="@+id/iv_edit_profile"
+                app:layout_constraintTop_toBottomOf="@+id/tv_edit_profile" />
+
+            <ImageView
+                android:id="@+id/iv_bank"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_bank_information"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_bank"
+                app:layout_constraintEnd_toStartOf="@+id/tv_bank"
+                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_bank"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tv_bank"
+                android:layout_width="141dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="124dp"
+                android:layout_marginBottom="16dp"
+                android:text="Bank Information"
+                android:textColor="#4A4A4A"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_edit_profile"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_edit"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_edit_profile"
+                app:layout_constraintEnd_toStartOf="@+id/tv_edit_profile"
+                app:layout_constraintHorizontal_bias="0.571"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_edit_profile"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/iv_right_1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_edit_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.805"
+                app:layout_constraintStart_toEndOf="@+id/tv_edit_profile"
+                app:layout_constraintTop_toTopOf="@+id/tv_edit_profile"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/iv_right_2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_bank"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.759"
+                app:layout_constraintStart_toEndOf="@+id/tv_bank"
+                app:layout_constraintTop_toTopOf="@+id/tv_bank"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_setting"
+            android:layout_width="313dp"
+            android:layout_height="153dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.681"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_others"
+            app:layout_constraintVertical_bias="0.021">
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_setting"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_setting"
+                app:layout_constraintEnd_toStartOf="@+id/tv_setting"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_setting" />
+
+            <TextView
+                android:id="@+id/tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="208dp"
+                android:text="Setting"
+                android:textColor="#4A4A4A"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_right_4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_setting"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.882"
+                app:layout_constraintStart_toEndOf="@+id/tv_setting"
+                app:layout_constraintTop_toTopOf="@+id/tv_setting"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/line_2"
+                android:layout_width="280dp"
+                android:layout_height="1dp"
+                android:background="#bfbfbf"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/tv_about"
+                app:layout_constraintStart_toStartOf="@+id/iv_setting"
+                app:layout_constraintTop_toBottomOf="@+id/tv_setting" />
+
+            <ImageView
+                android:id="@+id/iv_about"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_about"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_about"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_about"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_about"
+                android:layout_width="133dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="132dp"
+                android:text="@string/tentang_kami"
+                android:textColor="#4A4A4A"
+                app:layout_constraintBottom_toTopOf="@+id/btn_sign_out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_setting" />
+
+            <ImageView
+                android:id="@+id/iv_view_2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_about"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.794"
+                app:layout_constraintStart_toEndOf="@+id/tv_about"
+                app:layout_constraintTop_toTopOf="@+id/tv_about"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/line_3"
+                android:layout_width="280dp"
+                android:layout_height="1dp"
+                android:background="#bfbfbf"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/btn_sign_out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_about" />
+
+            <ImageView
+                android:id="@+id/iv_sign_out"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_sign_out"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/line_3" />
+
+            <TextView
+                android:id="@+id/btn_sign_out"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:text="@string/sign_out"
+                android:textColor="#4A4A4A"
+                app:layout_constraintStart_toStartOf="@id/tv_setting"
+                app:layout_constraintTop_toBottomOf="@id/line_3"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/iv_right_6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_sign_out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.848"
+                app:layout_constraintStart_toEndOf="@+id/btn_sign_out"
+                app:layout_constraintTop_toTopOf="@+id/btn_sign_out" />" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="110dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_doctor"
+        app:civ_circle_background_color="@color/light_purple"
+        app:civ_border_color="@color/gray_text"
+        app:civ_border_width="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/view_bg"
+        app:layout_constraintStart_toStartOf="@+id/view_bg"
+        app:layout_constraintTop_toTopOf="@+id/view_bg"
+        app:layout_constraintBottom_toTopOf="@id/view_bg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
